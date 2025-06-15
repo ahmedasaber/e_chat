@@ -1,4 +1,5 @@
 import 'package:e_chat/core/utils/app_color.dart';
+import 'package:e_chat/features/login/views/user_info_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 
@@ -66,12 +67,13 @@ class OtpViewBody extends StatelessWidget {
               onPressed: (){
 
               },
-              child: Text('Resend OTP')
+              child: Text('Resend OTP', style: TextStyle(color: AppColors.primaryColor),)
             ),
             const Spacer(),
             ElevatedButton(
               onPressed: () {
                 // TODO: Bloc -> verify OTP
+                Navigator.pushNamed(context, UserInfoView.routeName);
               },
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
