@@ -40,7 +40,7 @@ class LoginViewBody extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(16),
                     width: double.infinity,
-                    color: Color(0xffefebf7),
+                    color: Colors.grey.withValues(alpha: 0.1),
                     child: Column(
                       children: [
                         CircleAvatar(

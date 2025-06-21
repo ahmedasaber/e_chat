@@ -9,7 +9,8 @@ class ChatPageView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Message'),
+        title: Text('Messages'),
+        centerTitle: true,
         backgroundColor: Colors.white,
         scrolledUnderElevation: 0,
       ),

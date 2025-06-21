@@ -82,7 +82,7 @@ class ChatPageViewBody extends StatelessWidget {
         Expanded(
           child: Container(
             margin: EdgeInsets.symmetric(horizontal: 8),
-            padding: EdgeInsets.symmetric(horizontal: 8),
+            padding: EdgeInsets.symmetric(horizontal: 10),
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             color: Color(0xfff0f0f3),
