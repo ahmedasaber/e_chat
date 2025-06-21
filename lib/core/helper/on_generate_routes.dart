@@ -1,8 +1,9 @@
-import 'package:e_chat/features/chat/home_chat_view.dart';
+import 'package:e_chat/features/chat/views/chat_page_view.dart';
+import 'package:e_chat/features/chat/views/home_chat_view.dart';
 import 'package:e_chat/features/login/views/login_view.dart';
 import 'package:e_chat/features/login/views/otp_view.dart';
 import 'package:e_chat/features/login/views/user_info_view.dart';
-import 'package:e_chat/features/splah/views/splash_view.dart';
+import 'package:e_chat/features/splash/views/splash_view.dart';
 import 'package:flutter/material.dart';
 
 Route<void> onGenerateRoute(RouteSettings settings){
@@ -17,6 +18,8 @@ Route<void> onGenerateRoute(RouteSettings settings){
       return MaterialPageRoute(builder: (context)=> UserInfoView());
     case HomeChatView.routeName:
       return MaterialPageRoute(builder: (context)=> HomeChatView());
+    case ChatPageView.routeName:
+      return MaterialPageRoute(builder: (context)=> ChatPageView());
     default:
       return MaterialPageRoute(builder: (context)=> Scaffold());
   }

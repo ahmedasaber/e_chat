@@ -2,7 +2,7 @@ import 'package:e_chat/core/helper/on_generate_routes.dart';
 import 'package:e_chat/core/utils/app_color.dart';
 import 'package:e_chat/data/repositories/auth-repo/auth-repository.dart';
 import 'package:e_chat/features/login/bloc/auth_bloc.dart';
-import 'package:e_chat/features/splah/views/splash_view.dart';
+import 'package:e_chat/features/splash/views/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -40,13 +40,14 @@ class MyApp extends StatelessWidget {
           textSelectionTheme: TextSelectionThemeData(
             cursorColor: AppColors.primaryColor,
             selectionHandleColor: AppColors.primaryColor,
-            selectionColor: AppColors.primaryColor.withOpacity(0.2)
+            selectionColor: AppColors.primaryColor.withValues(alpha: 0.2)
           ),
           colorScheme: ColorScheme.fromSeed(
             seedColor: AppColors.primaryColor,
             primary: AppColors.primaryColor,
             secondary: AppColors.secondaryColor
-          )
+          ),
+          scaffoldBackgroundColor: Colors.white
         ),
       ),
     );

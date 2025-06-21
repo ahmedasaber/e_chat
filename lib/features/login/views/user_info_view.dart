@@ -1,5 +1,5 @@
 import 'package:e_chat/core/utils/app_color.dart';
-import 'package:e_chat/features/chat/home_chat_view.dart';
+import 'package:e_chat/features/chat/views/home_chat_view.dart';
 import 'package:e_chat/features/login/views/widget/user_info_view_body.dart';
 import 'package:flutter/material.dart';
 

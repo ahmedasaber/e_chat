@@ -1,5 +1,5 @@
 import 'package:e_chat/core/utils/app_color.dart';
-import 'package:e_chat/features/chat/home_chat_view.dart';
+import 'package:e_chat/features/chat/views/home_chat_view.dart';
 import 'package:e_chat/features/login/bloc/auth_bloc.dart';
 import 'package:e_chat/features/login/views/otp_view.dart';
 import 'package:flutter/material.dart';
@@ -87,7 +87,7 @@ class LoginViewBody extends StatelessWidget {
                               borderRadius: BorderRadius.circular(8),
                             ),
                             backgroundColor: AppColors.secondaryColor
-                                .withOpacity(0.2),
+                                .withValues(alpha: 0.2),
                             foregroundColor: AppColors.blackColor,
                             minimumSize: Size(double.infinity, 48),
                             elevation: 0,
@@ -154,9 +154,7 @@ class LoginViewBody extends StatelessWidget {
                               Icons.phone_android,
                               color: AppColors.blackColor,
                             ),
-                            fillColor: AppColors.secondaryColor.withOpacity(
-                              0.2,
-                            ),
+                            fillColor: AppColors.secondaryColor.withValues(alpha: 0.2,),
                             filled: true,
                             hintText: '+44 00 0000 0000',
                             hintStyle: TextStyle(color: Colors.grey),
