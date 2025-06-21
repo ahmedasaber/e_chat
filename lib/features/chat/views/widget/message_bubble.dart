@@ -1,14 +1,17 @@
+import 'package:e_chat/core/helper/chexk_isrtl.dart';
 import 'package:e_chat/core/utils/app_color.dart';
 import 'package:flutter/material.dart';
 
 class MessageBubble extends StatelessWidget{
   final Map<String, dynamic> message;
 
+
   const MessageBubble({super.key, required this.message});
   @override
   Widget build(BuildContext context) {
     final isMe = message['isMe'];
     final radius = Radius.circular(12);
+    final isRtl = isRTL(message['text']);
 
     return Align(
       alignment: isMe? Alignment.centerRight : Alignment.centerLeft,
@@ -34,6 +37,8 @@ class MessageBubble extends StatelessWidget{
                 color: isMe ? Colors.white : Colors.black87,
                 fontSize: 15,
               ),
+              textDirection: isRtl? TextDirection.rtl : TextDirection.ltr,
+              textAlign: isRtl? TextAlign.right : TextAlign.left,
             ),
             const SizedBox(height: 4),
             Row(

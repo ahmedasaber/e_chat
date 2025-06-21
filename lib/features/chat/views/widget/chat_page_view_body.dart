@@ -1,12 +1,31 @@
+import 'package:e_chat/core/helper/chexk_isrtl.dart';
 import 'package:e_chat/core/utils/app_color.dart';
 import 'package:e_chat/features/chat/views/widget/message_bubble.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class ChatPageViewBody extends StatelessWidget {
-   ChatPageViewBody({super.key});
+class ChatPageViewBody extends StatefulWidget {
+   const ChatPageViewBody({super.key});
 
+  @override
+  State<ChatPageViewBody> createState() => _ChatPageViewBodyState();
+}
+
+class _ChatPageViewBodyState extends State<ChatPageViewBody> {
+  late final TextEditingController _controller;
+  TextDirection _textDirection = TextDirection.ltr;
+
+  @override
+  void initState() {
+    _controller = TextEditingController();
+    super.initState();
+  }
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
   final List<Map<String, dynamic>> messages=
   [
     {
@@ -34,12 +53,12 @@ class ChatPageViewBody extends StatelessWidget {
       'text': "Hi!", 'time': "10:10", 'isMe': true
     },
     {
-      'text': "Awesome, thanks for letting me know! Can't wait for my delivery. 🎉",
+      'text': "مش مشكلة لو مش ماشية معاك اركنها و نعمل جوجل لحد ما تشوفلها حل",
       'time': "10:11",
       'isMe': true,
     },
     {
-      'text': "No problem at all!\nI'll be there in about 15 minutes.",
+      'text': "التسجيل ب الفيس ارخم من جوجل ف حاجات بعملها ف meta ب اكونت developer و create app و عايز key مش عارف اجيبه وحاجه خرة",
       'time': "10:11",
       'isMe': false,
     },
@@ -57,28 +76,6 @@ class ChatPageViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ListTile(
-          onTap: () {
-            // TODO
-          },
-          leading: CircleAvatar(
-            radius: 30,
-            backgroundImage: NetworkImage(
-              'https://i.pravatar.cc/150?img=2',
-            ), // TODO user photo
-          ),
-          title: Text(
-            'David Wayne', // TODO user name
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-          ),
-          subtitle: Text(
-            '(+44) 50 9285 3022', // TODO last message
-            style: TextStyle(
-              color: Colors.grey[400],
-              fontSize: 12, fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
         Expanded(
           child: Container(
             margin: EdgeInsets.symmetric(horizontal: 8),
@@ -95,7 +92,7 @@ class ChatPageViewBody extends StatelessWidget {
           )
         ),
         Container(
-          padding: EdgeInsets.symmetric(vertical: 18, horizontal: 12),
+          padding: EdgeInsets.symmetric(vertical: 2, horizontal: 12),
           child: Row(
             children: [
               IconButton(
@@ -106,8 +103,16 @@ class ChatPageViewBody extends StatelessWidget {
               ),
               Expanded(
                 child: TextField(
+                  controller: _controller,
+                  onChanged: (value){
+                    if(value.isNotEmpty){
+                      setState(() {
+                        _textDirection = isRTL(_controller.text) ? TextDirection.rtl : TextDirection.ltr;
+                      });
+                    }
+                  },
+                  textDirection: _textDirection,
                   decoration: InputDecoration(
-
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: BorderSide(

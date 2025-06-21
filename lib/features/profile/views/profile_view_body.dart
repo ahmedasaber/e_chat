@@ -16,7 +16,7 @@ class ProfileViewBody extends StatelessWidget {
               children: [
                 CircleAvatar(
                   radius: 90,
-                  backgroundImage: NetworkImage('https://i.pravatar.cc/150?img=2'),
+                  backgroundImage: NetworkImage('https://i.pravatar.cc/150?img=3'),
                 ),
                 Positioned(
                   top: 0,

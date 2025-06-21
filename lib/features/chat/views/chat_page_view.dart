@@ -9,8 +9,30 @@ class ChatPageView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Messages'),
-        centerTitle: true,
+        titleSpacing: 0,
+        leadingWidth: 46,
+        title: ListTile(
+          onTap: () {
+            // TODO
+          },
+          leading: CircleAvatar(
+            radius: 23,
+            backgroundImage: NetworkImage(
+              'https://i.pravatar.cc/150?img=2',
+            ), // TODO user photo
+          ),
+          title: Text(
+            'David Wayne', // TODO user name
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          ),
+          subtitle: Text(
+            '(+44) 50 9285 3022', // TODO last message
+            style: TextStyle(
+              color: Colors.grey[400],
+              fontSize: 12, fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
         backgroundColor: Colors.white,
         scrolledUnderElevation: 0,
       ),
